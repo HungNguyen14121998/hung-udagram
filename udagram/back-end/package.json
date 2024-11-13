@@ -8,7 +8,7 @@
     "build": "npx tsc",
     "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
     "create-db": "ENV=dev db-migrate db:create storefront_backend",
-    "deploy": "npm run build && eb list && eb use back-end-dev && eb deploy",
+    "deploy": "eb deploy",
     "delete-db-test": "db-migrate db:drop storefront_backend_test",
     "jasmine": "jasmine",
     "test": "db-migrate db:create storefront_backend_test && db-migrate --env test up && npm run build && ENV=test npm run jasmine && db-migrate db:drop storefront_backend_test"
