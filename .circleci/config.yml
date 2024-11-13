@@ -35,11 +35,6 @@ jobs:
           name: API Build
           command: |
             npm run api:build
-      - run:
-          name: Deploy Front-End
-          # TODO: Install, build, deploy in both apps
-          command: |
-            npm run frontend:deploy
   # deploy step will run only after manual approval
   deploy:
     docker:
