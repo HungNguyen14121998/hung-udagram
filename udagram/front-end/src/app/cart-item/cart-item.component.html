@@ -1,0 +1,12 @@
+<div class="hstack">
+    <img src={{product.url}} width="140" height="200" style="margin: 20px 80px 20px 20px; border-radius: 12px;">
+    <div>
+        <p class="name-bold">{{ product.name }}</p>
+        <br>
+        <p>${{ product.price }}</p>
+        <br>
+        <div class="hstack">
+            <p>Amount:</p> <input [(ngModel)]="product.amount" (ngModelChange)="amountChange()" name="amount" style="width: 80px; margin-top: -12px;" type="number" min="0" value={{product.amount}}>
+        </div>
+    </div>
+</div>

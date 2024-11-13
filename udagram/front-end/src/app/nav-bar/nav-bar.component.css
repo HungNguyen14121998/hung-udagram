@@ -1,0 +1,17 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    background: #33B5E5;
+    padding: 20px 200px 20px 200px;
+}
+
+h1, h6 {
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}

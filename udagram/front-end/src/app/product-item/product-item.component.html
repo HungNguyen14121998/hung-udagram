@@ -1,0 +1,22 @@
+<div class="vstack" style="width: 440px; height: 520px;">
+    <div class="border border-primary" style="width: 240px; height: 340px; margin-inline: 100px;">
+        <a routerLink={{getLink()}}>
+        <img src={{product.url}} style="margin: 40px;" width="160" height="260">
+        </a>
+    </div>
+    <h6 class="text-center" style="margin-top: 8px;">{{ product.name }}</h6>
+    <h6 class="text-center">${{ product.price }}</h6>
+    <select [(ngModel)]="product.amount" (ngModelChange)="selectedItemChange($event)" class="form-select" style="width: 160px; margin-inline: 140px;" aria-label="Default select example">
+        <option selected value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    <button class="btn btn-primary" (click)="addToCard()" style="width: 160px; margin-top: 16px;margin-inline: 140px;">Add to card</button>
+</div>

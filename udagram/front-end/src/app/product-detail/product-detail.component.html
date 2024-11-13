@@ -1,0 +1,26 @@
+<div class="container" style="width: 880px; height: 520px;">
+    <div class="hstack">
+        <div style="margin-right: 140px;">
+            <img src={{product.url}} width="380" height="480" style="border-radius: 20px;">
+        </div>
+        <div class="align-middle">
+            <h2>{{product.name}}</h2>
+            <p>${{product.price}}</p>
+            <select [(ngModel)]="selectedItem" (ngModelChange)="selectedItemChange($event)" class="form-select" style="width: 160px;" aria-label="Default select example">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            <button class="btn btn-primary" (click)="addToCard()" style="width: 160px; margin-top: 16px;">Add to card</button>
+            <br>
+            <a routerLink="/">← Back to product list</a>
+        </div>
+    </div>
+</div>
