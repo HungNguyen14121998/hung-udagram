@@ -36,11 +36,6 @@ jobs:
           command: |
             npm run api:build
       - run:
-          name: Deploy Back-End
-          # TODO: Install, build, deploy in both apps
-          command: |
-            npm run api:deploy
-      - run:
           name: Deploy Front-End
           # TODO: Install, build, deploy in both apps
           command: |
