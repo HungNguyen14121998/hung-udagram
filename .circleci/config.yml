@@ -40,6 +40,17 @@ jobs:
     docker:
       - image: "cimg/base:stable"
       # more setup needed for aws, node, elastic beanstalk
+    environment:
+      AWS_ACCESS_KEY_ID: "ASIATTUUI2UJUCQISNED"
+      AWS_BUCKET: "arn:aws:s3:::mybucket248345318675"
+      AWS_PROFILE: "default"
+      AWS_REGION: "us-east-1"
+      AWS_SECRET_ACCESS_KEY: "qugrPAQLYHmRRlsNkb0Qa/QcArnruAM/mSr9tHnW"
+      JWT_SECRET: "mysecretstring"
+      POSTGRES_DB: "postgres"
+      POSTGRES_HOST: "postgres.ct7crkwktzwy.us-east-1.rds.amazonaws.com"
+      POSTGRES_PASSWORD: "Password12345-Key123"
+      POSTGRES_USERNAME: "postgres"
     steps:
       - node/install:
           node-version: "23.1"
@@ -48,6 +59,8 @@ jobs:
       - checkout
       - run:
           name: Deploy Back-End
+          # Setup eb
+            eb setenv AWS_ACCESS_KEY_ID = $AWS_ACCESS_KEY_ID AWS_BUCKET = $AWS_BUCKET AWS_PROFILE = $AWS_PROFILE AWS_REGION = $AWS_REGION AWS_SECRET_ACCESS_KEY = $AWS_SECRET_ACCESS_KEY JWT_SECRET = $JWT_SECRET POSTGRES_DB = $POSTGRES_DB POSTGRES_HOST = $POSTGRES_HOST POSTGRES_PASSWORD = $POSTGRES_PASSWORD POSTGRES_USERNAME = $POSTGRES_USERNAME
           # TODO: Install, build, deploy in both apps
           command: |
             npm run api:deploy
